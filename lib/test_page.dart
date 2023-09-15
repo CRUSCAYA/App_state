@@ -18,24 +18,23 @@ class _TestPageState extends State<TestPage> {
   ];
 
   int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("carrusel de imagenes "),
+        title: Text("Carrusel de Imagenes"),
       ),
       body: Column(
         children: [
-          Text("Titulo de la imagen"),
-          Image.asset("assets/images/imagen1.png"),
           Text(
             "${data[index]["nombre"]}",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           Image.asset(
@@ -48,22 +47,21 @@ class _TestPageState extends State<TestPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton(
-             
                 onPressed: () {
                   index--;
                   setState(() {});
                 },
                 child: Text("Anterior"),
-               ),
-               ElevatedButton(
+              ),
+              ElevatedButton(
                 onPressed: () {
-                  index--;
+                  index++;
                   setState(() {});
                 },
                 child: Text("Siguiente"),
-               )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

@@ -11,6 +11,8 @@ class _Test2PageState extends State<Test2Page> {
   bool isTitleBold = true;
   bool isDescriptionJustify = false;
   double valueRedSlider = 0;
+  double valueGreenSlider = 0;
+  double valueBlueSlider = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +27,6 @@ class _Test2PageState extends State<Test2Page> {
             Text(
               "Pokemon",
               style: TextStyle(
-                //fontSize: 20.0,
-                //fontWeight: FontWeight.bold,
                 fontSize: 40.0,
                 fontWeight:
                     isTitleBold == true ? FontWeight.bold : FontWeight.normal,
@@ -34,30 +34,21 @@ class _Test2PageState extends State<Test2Page> {
             ),
             Text(
               "Phasellus lacinia accumsan odio, non porta lorem mattis vel. Mauris volutpat viverra interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus hendrerit, felis in bibendum commodo, tellus libero sollicitudin mi, ac suscipit massa dui eget nisl. Vivamus maximus lectus vel massa ornare vulputate. ",
-            textAlign:
+              textAlign:
                   isDescriptionJustify ? TextAlign.justify : TextAlign.start,
-            style: TextStyle(
-                color: Color.fromRGBO(valueRedSlider.toInt(), 155, 198, 1),
+              style: TextStyle(
+                color: Color.fromRGBO(valueRedSlider.toInt(),
+                    valueGreenSlider.toInt(), valueBlueSlider.toInt(), 1),
               ),
             ),
-            Checkbox(
+            /* Checkbox(
                 value: isTitleBold,
                 onChanged: (bool? value) {
                   isTitleBold = value!;
                   print(value);
                   setState(() {});
-                }),
-                Slider(
-                  min: 0,
-                  max: 255,
-                  value: valueRedSlider,
-                  onChanged: (value) {
-                  print(value);
-                  valueRedSlider = value;
-                  setState(() {});
-                },
-                ),
-                CheckboxListTile(
+                }),*/
+            CheckboxListTile(
                 title: Text("Title bold"),
                 subtitle: Text("Pone el titulo en negrita"),
                 value: isTitleBold,
@@ -66,7 +57,7 @@ class _Test2PageState extends State<Test2Page> {
                   print(value);
                   setState(() {});
                 }),
-                CheckboxListTile(
+            CheckboxListTile(
                 title: Text("Description justify"),
                 subtitle: Text("Justificar la descripción"),
                 value: isDescriptionJustify,
@@ -75,6 +66,37 @@ class _Test2PageState extends State<Test2Page> {
                   print(value);
                   setState(() {});
                 }),
+            Slider(
+              min: 0,
+              max: 255,
+              value: valueRedSlider,
+              onChanged: (value) {
+                print(value);
+                valueRedSlider = value;
+                setState(() {});
+              },
+            ),
+            Slider(
+              min: 0,
+              max: 255,
+              value: valueGreenSlider,
+              onChanged: (value) {
+                print(value);
+                valueGreenSlider = value;
+                setState(() {});
+              },
+            ),
+            Slider(
+              min: 0,
+              max: 255,
+              value: valueBlueSlider,
+              label: valueBlueSlider.round().toString(),
+              onChanged: (value) {
+                print(value);
+                valueBlueSlider = value;
+                setState(() {});
+              },
+            ),
           ],
         ),
       ),

@@ -10,8 +10,8 @@ void main() {
       // Configura la pantalla principal de la aplicación
       //home: HomePage(),
       //home:Test1Page()
-      //home:TestPage()
-      home:Test2Page()
+      home:TestPage()
+      //home:Test2Page()
     ),
   );
 }
