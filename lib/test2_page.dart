@@ -23,8 +23,11 @@ class _Test2PageState extends State<Test2Page> {
             Text(
               "Pokemon",
               style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
+                //fontSize: 20.0,
+                //fontWeight: FontWeight.bold,
+                fontSize: 40.0,
+                fontWeight:
+                    isTitleBold == true ? FontWeight.bold : FontWeight.normal,
               ),
             ),
             Text(
